@@ -1,5 +1,7 @@
 /* eslint-disable */
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { CreateAgentDto } from './dto/create-agent.dto'
+import { UpdateAgentDto } from './dto/update-agent.dto'
 
 @Controller('agents')
 export class AgentsController {
@@ -17,13 +19,13 @@ export class AgentsController {
     }
 
     @Post()
-    create(){
-        return 'create agent';
+    create(@Body() createAgentDto: CreateAgentDto){
+        return `create agent - firstname:  ${createAgentDto.firstname}, lastname: ${createAgentDto.lastname}`;
     }
 
     @Put(':id')
-    update(@Param('id') id: string){
-        return `update agent with id: ${id}`;
+    update(@Param('id') id: string, @Body() updateAgentDto: UpdateAgentDto){
+        return `update agent with id: ${id} firstname: ${updateAgentDto.firstname} lastname: ${updateAgentDto.lastname}`;
     }
 
     @Delete(':id')
