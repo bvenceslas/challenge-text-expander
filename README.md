@@ -24,8 +24,9 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Agenest is an api saving agent names, phone number, and submission year using **Nestjs framework**
 
+## Small Guide
 ## Installation
 
 ```bash
@@ -58,16 +59,29 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Getting Started
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+The project is public
 
-## Stay in touch
+## Built With
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- NodeJS
+- nestjs
+- MongoDB
 
-## License
+## Author
 
-Nest is [MIT licensed](LICENSE).
+👤 Venceslas Burongu
+
+- Github: @bvenceslas [@bvenceslas](https://github.com/bvenceslas)
+- Twitter: [@bvenceslas](https://twitter.com/bvenceslas)
+- Linkedin: [Venceslas Burongu](https://www.linkedin.com/in/venceslas-burongu-8271b519a/)
+
+## 🤝Contributing
+
+Contributions, issues and feature requests are welcome!!!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
