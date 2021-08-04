@@ -36,11 +36,11 @@ export class AgentsService {
     }
 
     // update an agent
-    // async update(id: string, updateAgentDto: UpdateAgentDto): Promise<Agent> {
-    //     return this.agentModel
-    //         .updateOne({ id }, ...updateAgentDto, { new: true })
-    //         .exec();
-    // }
+    async update(id: string, updateAgentDto: UpdateAgentDto): Promise<Agent> {
+        return await this.agentModel
+            .findOneAndUpdate({ _id:id }, {...updateAgentDto}, {new: true})
+            .exec();    
+    }
 
     // delete an agent
     async remove (id: string): Promise<Agent>{

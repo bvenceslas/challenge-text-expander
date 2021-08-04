@@ -30,7 +30,7 @@ export class AgentsController {
 
     @Put(':id')
     update(@Param('id') id: string, @Body() updateAgentDto: UpdateAgentDto){
-        return `update agent with id: ${id} firstname: ${updateAgentDto.firstname} lastname: ${updateAgentDto.lastname}`;
+        return this.agentsService.update(id, updateAgentDto);
     }
 
     @Delete(':id')
