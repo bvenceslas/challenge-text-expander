@@ -1,26 +1,31 @@
 /* eslint-disable */
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { AgentsService } from './agents.service';
 import { CreateAgentDto } from './dto/create-agent.dto'
 import { UpdateAgentDto } from './dto/update-agent.dto'
+import { Agent } from './interface/agent.interface';
 
 @Controller('agents')
 export class AgentsController {
 
+    // inject the agent service
+    constructor(private readonly agentsService: AgentsService){}
+
     // endpoints
     
     @Get() // dependency Get
-    findAll(){
-        return 'get all agents';
+    findAll(): Promise<Agent[]>{
+        return this.agentsService.findAll();
     }
 
     @Get(':id')
     findOne(@Param('id') id:string){
-        return `get agent with id: ${id}`
+        return this.agentsService.findOne(id);
     }
 
     @Post()
     create(@Body() createAgentDto: CreateAgentDto){
-        return `create agent - firstname:  ${createAgentDto.firstname}, lastname: ${createAgentDto.lastname}`;
+        return this.agentsService.create(createAgentDto);
     }
 
     @Put(':id')
@@ -30,6 +35,6 @@ export class AgentsController {
 
     @Delete(':id')
     delete(@Param('id') id: string){
-        return `delete agent with id: ${id}`;
+        return this.agentsService.remove(id);
     }
 }

@@ -11,4 +11,4 @@ import { AgentSchema } from './schema/agent.schema';
   controllers: [AgentsController],
   providers: [AgentsService],
 })
-export class AppModule {}
+export class AgentsModule {}
